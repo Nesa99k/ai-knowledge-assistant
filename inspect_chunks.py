@@ -44,4 +44,4 @@ for chunk in all_chunks:
     )
 
     print("-" * 80)
-    print(chunk.text)
+    print(chunk.text[:500])
