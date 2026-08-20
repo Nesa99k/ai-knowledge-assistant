@@ -1,16 +1,19 @@
-import httpx
+from questions import QUESTIONS
 import streamlit as st
+import httpx
 from pathlib import Path
 import os
 
 
-from questions import QUESTIONS
+# --------------------------------------------------
+# Configuration
+# --------------------------------------------------
 
 BASE_DIR = Path(__file__).resolve().parent
 
 API_URL = os.getenv(
     "API_URL",
-    "http://127.0.0.1:8000/ask",
+    "http://127.0.0.1:8000/ask/stream",
 )
 
 
@@ -54,17 +57,20 @@ st.markdown(
             );
         color: #f5f3f8;
     }
+
     /* Remove Streamlit top bar */
     header[data-testid="stHeader"] {
-    display: none;
+        display: none;
     }
+
     [data-testid="stAppViewContainer"] {
-      background: transparent;
+        background: transparent;
     }
+
     [data-testid="stHeader"] {
-    background: transparent;
+        background: transparent;
     }
-    
+
     /* Main content */
     .block-container {
         max-width: 1200px;
@@ -204,8 +210,8 @@ st.markdown(
 
 st.markdown(
     '<div class="app-subtitle">'
-    'Clinical nutrition knowledge assistant'
-    '</div>',
+    "Clinical nutrition knowledge assistant"
+    "</div>",
     unsafe_allow_html=True,
 )
 
@@ -222,22 +228,10 @@ left_column, right_column = st.columns(
 
 with left_column:
 
-    # st.markdown(
-    #     """
-    #     <div class="glass-card">
-    #     """,
-    #     unsafe_allow_html=True,
-    # )
-
     st.image(
-        "ui/robot.png",
+        str(BASE_DIR / "robot.png"),
         width=500,
     )
-
-    # st.markdown(
-    #     "</div>",
-    #     unsafe_allow_html=True,
-    # )
 
 
 with right_column:
@@ -254,6 +248,7 @@ with right_column:
 
     ask = st.button("Ask")
 
+
 # --------------------------------------------------
 # Ask API
 # --------------------------------------------------
@@ -262,72 +257,101 @@ if ask:
 
     try:
 
-        response = httpx.post(
-            API_URL,
-            json={
-                "question": question,
-                "section": section,
-            },
-            timeout=120.0,
-        )
+        with httpx.Client(timeout=120.0) as client:
 
-        if response.status_code == 200:
+            with client.stream(
+                "POST",
+                API_URL,
+                json={
+                    "question": question,
+                    "section": section,
+                },
+            ) as response:
 
-            data = response.json()
+                if response.status_code != 200:
 
-            st.markdown(
-                "### Conversation"
-            )
+                    st.error(
+                        f"API error: {response.status_code}"
+                    )
 
-            # User message
-            st.markdown(
-                f"""
-                <div class="message">
-                    <div class="avatar">👤</div>
-                    <div class="message-content">
-                        <div class="message-label">
-                            You
+                else:
+
+                    st.markdown(
+                        "### Conversation"
+                    )
+
+                    # ------------------------------------------
+                    # User message
+                    # ------------------------------------------
+
+                    st.markdown(
+                        f"""
+                        <div class="message">
+                            <div class="avatar">👤</div>
+                            <div class="message-content">
+                                <div class="message-label">
+                                    You
+                                </div>
+                                {question}
+                            </div>
                         </div>
-                        {question}
-                    </div>
-                </div>
-                """,
-                unsafe_allow_html=True,
-            )
+                        """,
+                        unsafe_allow_html=True,
+                    )
 
-            # Assistant message
-            st.markdown(
-                f"""
-                <div class="message">
-                    <div class="avatar">🤖</div>
-                    <div class="message-content">
-                        <div class="message-label">
-                            AI Knowledge Assistant
+                    # ------------------------------------------
+                    # Assistant message
+                    # ------------------------------------------
+
+                    assistant_placeholder = st.empty()
+                    assistant_text = ""
+
+                    for line in response.iter_lines():
+
+                        if not line:
+                            continue
+
+                        if line == "[ERROR]":
+                            st.error(
+                                "An error occurred while "
+                                "generating the response."
+                            )
+                            break
+
+                        assistant_text += line.replace(
+                            "\\n",
+                            "\n",
+                        )
+
+                        assistant_placeholder.markdown(
+                            f"""
+                            <div class="message">
+                                <div class="avatar">🤖</div>
+                                <div class="message-content">
+                                    <div class="message-label">
+                                        AI Knowledge Assistant
+                                    </div>
+                                    {assistant_text}
+                                </div>
+                            </div>
+                            """,
+                            unsafe_allow_html=True,
+                        )
+
+                    # ------------------------------------------
+                    # Reference
+                    # ------------------------------------------
+
+                    st.markdown(
+                        f"""
+                        <div class="reference">
+                            📚 Source: {section}
+                            <br>
+                            Knowledge base reference
                         </div>
-                        {data["answer"]}
-                    </div>
-                </div>
-                """,
-                unsafe_allow_html=True,
-            )
-
-            # Reference
-            st.markdown(
-                f"""
-                <div class="reference">
-                    📚 Source: {section}
-                    <br>
-                    Knowledge base reference
-                </div>
-                """,
-                unsafe_allow_html=True,
-            )
-
-        else:
-
-            st.error(
-                f"API error: {response.status_code}"
-            )
+                        """,
+                        unsafe_allow_html=True,
+                    )
 
     except httpx.RequestError:
 

@@ -70,3 +70,28 @@ class RAGPipeline:
             context=context,
         )
         return self.llm.generate(prompt)
+
+    def answer_stream(
+        self,
+        question: str,
+        section: str | None = None,
+    ):
+        retrieval_query = question
+
+        results = self.retriever.retrieve(
+            retrieval_query,
+            section=section,
+        )
+
+        if not results:
+            yield "I could not find relevant information in the provided document."
+            return
+
+        context = build_context(results)
+
+        prompt = build_rag_prompt(
+            question=question,
+            context=context,
+        )
+
+        yield from self.llm.generate_stream(prompt)

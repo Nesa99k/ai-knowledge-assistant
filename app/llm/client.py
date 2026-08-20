@@ -28,3 +28,21 @@ class LLMClient:
 
         except Exception as exc:
             raise RuntimeError("LLM request failed.") from exc
+
+# -------------------------------------------------------------------
+
+    def generate_stream(self, prompt: str):
+        try:
+            stream = self.client.responses.create(
+                model="openai/gpt-oss-120b",
+                instructions="You are a helpful AI assistant.",
+                input=prompt,
+                stream=True,
+            )
+
+            for event in stream:
+                if event.type == "response.output_text.delta":
+                    yield event.delta
+
+        except Exception as exc:
+            raise RuntimeError("LLM streaming request failed.") from exc
