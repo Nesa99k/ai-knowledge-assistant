@@ -1,13 +1,17 @@
 import httpx
 import streamlit as st
 from pathlib import Path
+import os
 
 
 from questions import QUESTIONS
 
 BASE_DIR = Path(__file__).resolve().parent
 
-API_URL = "http://127.0.0.1:8000/ask"
+API_URL = os.getenv(
+    "API_URL",
+    "http://127.0.0.1:8000/ask",
+)
 
 
 # --------------------------------------------------
