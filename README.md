@@ -331,9 +331,11 @@ The current system can:
 
 ## 11. Testing
 
-The project includes tests for the major components.
+The project includes automated tests for the main components and additional scripts for manual inspection and RAG evaluation.
 
-Current tests include:
+### Automated Tests
+
+Automated tests are located in:
 
 ```text
 tests/
@@ -342,20 +344,35 @@ tests/
 ├── test_ingestion.py
 ├── test_llm.py
 ├── test_loader.py
-└── test_pipeline.py
+├── test_pipeline.py
+└── test_query_rewriter.py
 ```
 
-There are also development and inspection scripts for manually examining the pipeline:
+Pytest is configured to collect tests only from the `tests/` directory. This keeps the automated tests separate from the manual testing scripts in the project root.
+
+Run all automated tests with:
+
+```bash
+PYTHONPATH=. pytest
+```
+
+### Manual Testing and Inspection
+
+The repository also contains scripts for manually inspecting individual pipeline stages and testing RAG behavior:
 
 ```text
 inspect_chunks.py
 inspect_ingestion.py
 inspect_pdf.py
+search_faiss.py
 test_context.py
+test_metadata_filter.py
+test_query_rewriter.py
 test_rag_llm.py
 test_tables.py
-search_faiss.py
 ```
+
+These scripts are intended for development and manual evaluation rather than automated test discovery.
 
 Manual RAG testing has included questions about:
 
@@ -372,6 +389,11 @@ Manual RAG testing has included questions about:
 ```text
 .
 ├── app
+│   ├── api
+│   │   ├── main.py
+│   │   ├── routes.py
+│   │   └── schemas.py
+│   │
 │   ├── ingestion
 │   │   ├── chunker.py
 │   │   ├── embedder.py
@@ -388,11 +410,14 @@ Manual RAG testing has included questions about:
 │       ├── client.py
 │       ├── context.py
 │       ├── prompt.py
+│       ├── query_rewriter.py
 │       └── rag.py
 │
 ├── data
 │   ├── documents
+│   │   └── disabilities.pdf
 │   └── processed
+│       └── disabilities_chunks.json
 │
 ├── tests
 │   ├── test_chunker.py
@@ -400,19 +425,28 @@ Manual RAG testing has included questions about:
 │   ├── test_ingestion.py
 │   ├── test_llm.py
 │   ├── test_loader.py
-│   └── test_pipeline.py
+│   ├── test_pipeline.py
+│   └── test_query_rewriter.py
+│
+├── ui
+│   ├── app.py
+│   ├── questions.py
+│   ├── page_icon.png
+│   └── robot.png
 │
 ├── build_vector_index.py
 ├── embed_chunks.py
 ├── inspect_chunks.py
 ├── inspect_ingestion.py
 ├── inspect_pdf.py
-├── main.py
 ├── save_chunks.py
 ├── search_faiss.py
 ├── test_context.py
+├── test_metadata_filter.py
+├── test_query_rewriter.py
 ├── test_rag_llm.py
 ├── test_tables.py
+├── pytest.ini
 ├── requirements.txt
 └── README.md
 ```
@@ -423,38 +457,118 @@ Manual RAG testing has included questions about:
 
 The project uses environment variables for external service configuration.
 
-A `.env` file is used locally and is not intended to be committed to Git.
+Create a local `.env` file from the provided example:
 
-An example configuration is provided through:
+```bash
+cp .env.example .env
+```
+
+Add your own Hugging Face token:
 
 ```text
-.env.example
+HF_TOKEN=your_huggingface_token
 ```
+
+The `.env` file contains secrets and must not be committed to Git.
+
+The repository includes `.env.example` as a template so that each user can provide their own credentials.
 
 ---
 
 ## 14. Running the Project
 
-Create and activate the virtual environment:
+### 14.1 Create the Environment
+
+Create and activate a virtual environment:
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 ```
 
-Install dependencies:
+Install the dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-The ingestion, embedding, indexing, retrieval, and RAG stages can be executed through the corresponding project scripts.
+### 14.2 Configure Environment Variables
 
-For example, the RAG pipeline can be tested with:
+Create the local environment file:
 
 ```bash
-PYTHONPATH=. python tests/test_rag_llm.py
+cp .env.example .env
 ```
+
+Then add your own `HF_TOKEN` to `.env`.
+
+### 14.3 Prepare Embeddings
+
+The repository includes the processed chunks, while embeddings are generated locally:
+
+```bash
+python embed_chunks.py
+```
+
+This creates:
+
+```text
+data/processed/disabilities_embeddings.json
+```
+
+### 14.4 Build the FAISS Index
+
+After generating embeddings:
+
+```bash
+python build_vector_index.py
+```
+
+This creates:
+
+```text
+data/processed/disabilities.index
+```
+
+The embeddings and FAISS index are generated artifacts and are not required to be committed to the repository.
+
+### 14.5 Run Automated Tests
+
+Run the complete automated test suite:
+
+```bash
+PYTHONPATH=. pytest
+```
+
+### 14.6 Run the API
+
+The FastAPI application is located under:
+
+```text
+app/api/main.py
+```
+
+The API can be started with:
+
+```bash
+PYTHONPATH=. uvicorn app.api.main:app --reload
+```
+
+### 14.7 Run the Streamlit UI
+
+Start the user interface with:
+
+```bash
+streamlit run ui/app.py
+```
+
+The PDF used by the project is included in:
+
+```text
+data/documents/disabilities.pdf
+```
+
+so the example project can be run without obtaining a separate source document.
 
 ---
 

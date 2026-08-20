@@ -5,6 +5,6 @@ __pycache__/
 .pytest_cache/
 .DS_Store
 
-data/documents/
+
 data/processed/*.index
 data/processed/*_embeddings.json
