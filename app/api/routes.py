@@ -18,7 +18,10 @@ def root():
 def ask(request: AskRequest):
 
     try:
-        answer = rag_pipeline.answer(request.question)
+        answer = rag_pipeline.answer(
+            request.question,
+            section=request.section,
+        )
 
         return AskResponse(answer=answer)
 

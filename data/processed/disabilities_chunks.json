@@ -72,7 +72,7 @@
     "book_page_number": 18
   },
   {
-    "text": "Mental Retardation\n\nOften mental retardation is caused by conditions called syndromes. Syndromes are defined as a set of characteristics which occur together.  Two of the most common are Down syndrome and Prader-Willi syndrome.\n\nDown Syndrome is a disorder of the chromosomes.  The normal genetic pattern of chromosomes is when each individual has 23 pairs in each cell or a total of 46 chromosomes.",
+    "text": "Mental Retardation\n\nOften mental retardation is caused by conditions called syndromes. Syndromes are defined as a set of characteristics which occur together.  Two of the most common are Down syndrome and Prader-Willi syndrome.",
     "source": "data/documents/disabilities.pdf",
     "section": "Mental Retardation",
     "chunk_id": 9,
@@ -80,26 +80,42 @@
     "book_page_number": 18
   },
   {
+    "text": "Down Syndrome is a disorder of the chromosomes.  The normal genetic pattern of chromosomes is when each individual has 23 pairs in each cell or a total of 46 chromosomes.",
+    "source": "data/documents/disabilities.pdf",
+    "section": "Down Syndrome (Mental Retardation)",
+    "chunk_id": 10,
+    "pdf_page_number": 6,
+    "book_page_number": 18
+  },
+  {
     "text": "The individual with Down syndrome will have an extra chromosome on the 21 st chromosome and is sometimes called Trisomy 21.  The incidence of Trisomy 21 or Down syndrome is 1 in 600 live births.  The infant may be born with a heart defect, and it is common for the infant to have slanted eyes, flattened nose, low set ears, and low muscle tone.  Many infants with Down syndrome develop slowly related to cognitive and motor skills, crawling, and walking (Blackman, 1990).\n\nThese children often have feeding problems due to a weak 'suck' and are slow to cut their teeth.  Their growth may be slower, and they are often shorter than other classmates. Nutrition problems are individualized, but their most frequent problem when school age, is the potential to be overweight (Rubin, Timmer, Chioine, Braddock & McGuire, 1998).  As pre-schoolers, chewing and swallowing may be a problem, resulting in difficulty changing to cup drinking and eating 'table' foods.",
     "source": "data/documents/disabilities.pdf",
-    "section": "Mental Retardation",
-    "chunk_id": 10,
+    "section": "Down Syndrome (Mental Retardation)",
+    "chunk_id": 11,
     "pdf_page_number": 7,
     "book_page_number": 19
   },
   {
-    "text": "What to expect in the Diet Prescription\nLow calories for the child who is overweight\nTexture modification for chewing and swallowing problems\nSelf-feeding devices\nPrader Willi (PW) Syndrome involves the 15 th chromosome.  Although PW is less frequent than Down syndrome, it is now identified shortly after birth and appears with characteristics similar to Down syndrome.  The PW infant has very low muscle tone, difficulty in sucking and swallowing, and may have failure to thrive.  Later in the preschool period, most children with PW have an overwhelming appetite and lack the ability to know when they are full.  As a result, limiting their intake and the availability of food is extremely important (Schoeller, Livitsky, Bandini, Dietz, & Walozak, 1988).  In the past, these individuals became extremely obese and difficult to manage.  Even with better diagnostic techniques, there continue to be children who are not diagnosed early and are identified once obesity and unusual food consumption patterns become more evident.  Under current treatment with controlled food intake, increased activity, and use of growth hormone, the PW child's health picture is greatly improved.  However, their appetite remains the same and supervision is required to control the food consumed.  Individuals with PW require regular physical activity, which can be difficult due to the low muscle tone, and they may require a calorie restricted plan.",
+    "text": "What to expect in the Diet Prescription\nLow calories for the child who is overweight\nTexture modification for chewing and swallowing problems\nSelf-feeding devices",
     "source": "data/documents/disabilities.pdf",
-    "section": "Mental Retardation",
-    "chunk_id": 11,
+    "section": "Down Syndrome (Mental Retardation)",
+    "chunk_id": 12,
+    "pdf_page_number": 7,
+    "book_page_number": 19
+  },
+  {
+    "text": "Prader Willi (PW) Syndrome involves the 15 th chromosome.  Although PW is less frequent than Down syndrome, it is now identified shortly after birth and appears with characteristics similar to Down syndrome.  The PW infant has very low muscle tone, difficulty in sucking and swallowing, and may have failure to thrive.  Later in the preschool period, most children with PW have an overwhelming appetite and lack the ability to know when they are full.  As a result, limiting their intake and the availability of food is extremely important (Schoeller, Livitsky, Bandini, Dietz, & Walozak, 1988).  In the past, these individuals became extremely obese and difficult to manage.  Even with better diagnostic techniques, there continue to be children who are not diagnosed early and are identified once obesity and unusual food consumption patterns become more evident.  Under current treatment with controlled food intake, increased activity, and use of growth hormone, the PW child's health picture is greatly improved.  However, their appetite remains the same and supervision is required to control the food consumed.  Individuals with PW require regular physical activity, which can be difficult due to the low muscle tone, and they may require a calorie restricted plan.",
+    "source": "data/documents/disabilities.pdf",
+    "section": "Prader Willi (PW) Syndrome (Mental Retardation)",
+    "chunk_id": 13,
     "pdf_page_number": 7,
     "book_page_number": 19
   },
   {
     "text": "Prader Willi (PW) Syndrome involves the 15 th chromosome.  Although PW is less frequent than Down syndrome, it is now identified shortly after birth and appears with characteristics similar to Down syndrome.  The PW infant has very low muscle tone, difficulty in sucking and swallowing, and may have failure to thrive.  Later in the preschool period, most children with PW have an overwhelming appetite and lack the ability to know when they are full.  As a result, limiting their intake and the availability of food is extremely important (Schoeller, Livitsky, Bandini, Dietz, & Walozak, 1988).  In the past, these individuals became extremely obese and difficult to manage.  Even with better diagnostic techniques, there continue to be children who are not diagnosed early and are identified once obesity and unusual food consumption patterns become more evident.  Under current treatment with controlled food intake, increased activity, and use of growth hormone, the PW child's health picture is greatly improved.  However, their appetite remains the same and supervision is required to control the food consumed.  Individuals with PW require regular physical activity, which can be difficult due to the low muscle tone, and they may require a calorie restricted plan.\n\nWhat to Expect in a Diet Prescription\n\nDecreased calories\n\nSupervision to prevent food seeking (Environmental controls are essential because children with PW cannot control this continual urge to obtain additional food.)",
     "source": "data/documents/disabilities.pdf",
-    "section": "Mental Retardation",
-    "chunk_id": 12,
+    "section": "Prader Willi (PW) Syndrome (Mental Retardation)",
+    "chunk_id": 14,
     "pdf_page_number": 8,
     "book_page_number": 20
   },
@@ -107,7 +123,7 @@
     "text": "Spina Bifida\n\nSpina bifida is the term frequently used to describe various forms of a neural tube defect.  Other terms are myelomeningocele, meningocele, and spina bifida occulta.  These children are born with a lesion in the spinal column.  In normal development the spine is formed with a spinal cord making a column along the back surrounded by a membrane and the bones of the spine.  In spina bifida, the formation is incomplete and a sac is formed in the back.  The spinal cord grows into this sac, and the spinal nerves are not properly connected to the spinal cord and the brain.  This can result in many problems related to walking and elimination since both the urinary tract and the intestinal tract can be involved.  In addition there can be a problem with the accumulation of the spinal fluid in the head causing a condition called hydrocephalus.  Surgical repair or closure of the lesion occurs shortly after birth, and if needed, a shunt is placed in the head to drain off excess fluid, usually into the abdominal cavity (Ekvall & Cerniglia, 2005).",
     "source": "data/documents/disabilities.pdf",
     "section": "Spina Bifida",
-    "chunk_id": 13,
+    "chunk_id": 15,
     "pdf_page_number": 8,
     "book_page_number": 20
   },
@@ -115,7 +131,7 @@
     "text": "Spina bifida is the term frequently used to describe various forms of a neural tube defect.  Other terms are myelomeningocele, meningocele, and spina bifida occulta.  These children are born with a lesion in the spinal column.  In normal development the spine is formed with a spinal cord making a column along the back surrounded by a membrane and the bones of the spine.  In spina bifida, the formation is incomplete and a sac is formed in the back.  The spinal cord grows into this sac, and the spinal nerves are not properly connected to the spinal cord and the brain.  This can result in many problems related to walking and elimination since both the urinary tract and the intestinal tract can be involved.  In addition there can be a problem with the accumulation of the spinal fluid in the head causing a condition called hydrocephalus.  Surgical repair or closure of the lesion occurs shortly after birth, and if needed, a shunt is placed in the head to drain off excess fluid, usually into the abdominal cavity (Ekvall & Cerniglia, 2005).",
     "source": "data/documents/disabilities.pdf",
     "section": "Spina Bifida",
-    "chunk_id": 14,
+    "chunk_id": 16,
     "pdf_page_number": 9,
     "book_page_number": 21
   },
@@ -123,7 +139,7 @@
     "text": "Children with spina bifida encounter many health problems. These include urinary tract infections, constipation, frequent infections involving the shunt, obesity, and feeding problems related to swallowing.  Since 1995, folic acid has been used to supplement the dietary intake of women of childbearing age, and its use has resulted in a 20% decrease in the incidence of spina bifida.",
     "source": "data/documents/disabilities.pdf",
     "section": "Spina Bifida",
-    "chunk_id": 15,
+    "chunk_id": 17,
     "pdf_page_number": 9,
     "book_page_number": 21
   },
@@ -131,7 +147,7 @@
     "text": "What to Expect in the Diet Prescription\nPossible low calorie meal plan\nExtra fluids including cranberry juice (Overweight children may require low-calorie cranberry juice; be certain that the cranberry juice blend contains at least 27-30% cranberry juice.)\nIncreased fiber\nTexture modification",
     "source": "data/documents/disabilities.pdf",
     "section": "Spina Bifida",
-    "chunk_id": 16,
+    "chunk_id": 18,
     "pdf_page_number": 9,
     "book_page_number": 21
   },
@@ -139,7 +155,7 @@
     "text": "Cystic Fibrosis\n\nCystic fibrosis (CF) is a serious disorder of childhood characterized by the production of increased amounts of mucus, progressive lung disease, and impaired absorption of fat and protein.  The child with cystic fibrosis has frequent respiratory symptoms such as coughing and wheezing and may require frequent hospitalization and medications.  CF is an inherited disorder with both parents as carriers and has an incidence of 1 in 2000 births (Luder, 2005).",
     "source": "data/documents/disabilities.pdf",
     "section": "Cystic Fibrosis",
-    "chunk_id": 17,
+    "chunk_id": 19,
     "pdf_page_number": 9,
     "book_page_number": 21
   },
@@ -147,7 +163,7 @@
     "text": "Cystic fibrosis (CF) is a serious disorder of childhood characterized by the production of increased amounts of mucus, progressive lung disease, and impaired absorption of fat and protein.  The child with cystic fibrosis has frequent respiratory symptoms such as coughing and wheezing and may require frequent hospitalization and medications.  CF is an inherited disorder with both parents as carriers and has an incidence of 1 in 2000 births (Luder, 2005).\n\nTreatment for cystic fibrosis consists of taking enzymes which improve the absorption of proteins and fats.  In addition, the child with CF may have lactose intolerance which requires the elimination of milk and milk products.  Lack of weight gain is frequently a problem along with limited growth and vitamin and mineral deficiencies (Borowitz, Baker, & Stallings, 2002).",
     "source": "data/documents/disabilities.pdf",
     "section": "Cystic Fibrosis",
-    "chunk_id": 18,
+    "chunk_id": 20,
     "pdf_page_number": 10,
     "book_page_number": 22
   },
@@ -155,7 +171,7 @@
     "text": "What to Expect in the Diet Prescription\nIncreased calories\nLactose free or reduced-lactose food choices\nIncreased protein",
     "source": "data/documents/disabilities.pdf",
     "section": "Cystic Fibrosis",
-    "chunk_id": 19,
+    "chunk_id": 21,
     "pdf_page_number": 10,
     "book_page_number": 22
   },
@@ -163,7 +179,7 @@
     "text": "Rett Syndrome\n\nRett syndrome (RS) is a neuron developmental disorder primarily involving girls. Rett syndrome is a genetic disorder, characterized by a period of apparently normal development followed by the arrest of developmental skills.  There are problems with growth starting with a deceleration of head growth after five months of age until 4 years of age.  One of the most identifiable symptoms is the loss of purposeful hand use and wringing of the hands, along with impaired language and psychomotor retardation (Isaacs, Murdock, Lane, & Percy, 2003).\n\nMany RS children have problems with chewing and swallowing that leads to reduced intake, reflux, and major problems with constipation.  They may require increased fiber in the diet, special feeding devices, and occasionally tube feeding.  Routine monitoring of their nutritional status throughout the life span is essential.",
     "source": "data/documents/disabilities.pdf",
     "section": "Rett Syndrome",
-    "chunk_id": 20,
+    "chunk_id": 22,
     "pdf_page_number": 10,
     "book_page_number": 22
   },
@@ -171,7 +187,7 @@
     "text": "Many RS children have problems with chewing and swallowing that leads to reduced intake, reflux, and major problems with constipation.  They may require increased fiber in the diet, special feeding devices, and occasionally tube feeding.  Routine monitoring of their nutritional status throughout the life span is essential.\n\nRefer to Table 1 for a summary of the most frequently occurring disabilities requiring prescriptions for special meals.",
     "source": "data/documents/disabilities.pdf",
     "section": "Rett Syndrome",
-    "chunk_id": 21,
+    "chunk_id": 23,
     "pdf_page_number": 11,
     "book_page_number": 23
   },
@@ -179,7 +195,7 @@
     "text": "| SYNDROME/DISABILITY                                                                                                                                                                                                                                                                 | Altered Growth Underweight Obesity         | Altered Energy Need                                          | Constipation / Diarrhea   | Feeding Problems                                                          | Others                                                                                                   |\n| Cerebral Palsy A disorder of muscle control or coordination resulting from injury to the brain during its early (fetal, perinatal, and early childhood) development. There may be associated problems with intellectual, visual, or other functions                                 | Underweight                                | Increased calories, failure to thrive                        | Constipation              | Oral / Motor Problems, inability to self- feed, Swallowing incoordination | Central nervous system involvement, Orthopedic problems, Positioning problems                            |\n| Down Syndrome (a genetic disorder) Results from an extra #21 chromosome causing development problems such as congenital heart disease, mental retardation, small stature, and decreased muscle tone                                                                                 | Overweight, short stature                  | Caloric need lower than normal                               | Constipation              | Poor suck in infancy, Difficulty transitioning to textured foods          | Gum disease, increased risk of heart disease                                                             |\n| Prader-Willi Syndrome ( a genetic disorder) A disorder characterized by a lack of internal controls including uncontrollable eating habits and inability to distinguish hunger from appetite, severe obesity, poorly developed genitalia, and moderate to severe mental retardation | Overweight, short stature, low muscle tone | Calorie need lower than normal. Failure to thrive in infancy | Constipation              | Weak suck in infancy; Requires a food- controlled environment             | Risk of Diabetes Mellitus, PICA (a craving for unusual or inedible items; this can be life- threatening) |",
     "source": "data/documents/disabilities.pdf",
     "section": "Table 1 - Frequently occurring disabilities",
-    "chunk_id": 22,
+    "chunk_id": 24,
     "pdf_page_number": 12,
     "book_page_number": 24
   },
@@ -187,7 +203,7 @@
     "text": "Table 1. Frequently occurring disabilities",
     "source": "data/documents/disabilities.pdf",
     "section": "Table 1 - Frequently occurring disabilities",
-    "chunk_id": 23,
+    "chunk_id": 25,
     "pdf_page_number": 12,
     "book_page_number": 24
   },
@@ -195,7 +211,7 @@
     "text": "| SYNDROME/DISABILITY                                                                                                                                                                         | Altered Growth Underweight Obesity   | Altered Energy Need                                                                                                                                        | Constipation / Diarrhea   | Feeding Problems                                                                                               | Others                                                                                           |\n| Autism Classified as a type of pervasive developmental disorder; diagnostic criteria include communication problems, ritualistic behaviors, and inappropriate social interaction            |                                      |                                                                                                                                                            |                           | Refusal to eat many foods with texture Very selective in foods to accept Possible gluten or casein intolerance | Medication/ Nutrient interaction                                                                 |\n| Cystic Fibrosis (CF) An inherited disorder of the exocrine glands, primarily the pancreas, pulmonary system, and sweat glands characterized by abnormally thick luminal secretions          |                                      | Need for increased nutrient intake; May need increased calories; Decrease of nutrients related to pancreatic insufficiency and chronic pulmonary infection |                           |                                                                                                                | Increase in secondary illnesses * Diabetes * Liver Disease * Osteoporosis                        |\n| Spina Bifida (Myelomeningocele) Results from a midline defect of the skin, spinal column, and spinal cord. Characterized by hydrocephalus, mental retardation, and lack of muscular control | Obesity                              | Altered energy needs based on short stature and limited mobility                                                                                           | Constipation              | Swallowing problems caused by the Arnold Chiari malformation of the brain.                                     | Urinary tract infections; Increased risk of pressure ulcers due to lack of feeling in lower body |",
     "source": "data/documents/disabilities.pdf",
     "section": "Table 1 - Frequently occurring disabilities",
-    "chunk_id": 24,
+    "chunk_id": 26,
     "pdf_page_number": 13,
     "book_page_number": 25
   },
@@ -203,7 +219,7 @@
     "text": "Table 1. Frequently occurring disabilities, continued",
     "source": "data/documents/disabilities.pdf",
     "section": "Table 1 - Frequently occurring disabilities",
-    "chunk_id": 25,
+    "chunk_id": 27,
     "pdf_page_number": 13,
     "book_page_number": 25
   },
@@ -211,7 +227,7 @@
     "text": "Metabolic Diseases",
     "source": "data/documents/disabilities.pdf",
     "section": "Metabolic Diseases",
-    "chunk_id": 26,
+    "chunk_id": 28,
     "pdf_page_number": 14,
     "book_page_number": 26
   },
@@ -219,7 +235,7 @@
     "text": "Diabetes\n\nDiabetes is a disorder in which the body is unable to produce or respond to insulin. Insulin is the substance produced and secreted by the pancreas, and enables the body to properly use sugar in the form of glucose, an essential source of energy for the body.  There are two types of diabetes: Type 1 and Type 2.  Type 1 is insulin dependent and requires insulin injections.  Type 2 is usually treated with a diet and oral medication (American Dietetic Association, 2000).\n\nEarly symptoms include excessive hunger and thirst, excessive urination, weight loss, and fatigue.  This may be a very common disorder facing school nutrition directors, due to the increasing existence of childhood obesity.",
     "source": "data/documents/disabilities.pdf",
     "section": "Diabetes",
-    "chunk_id": 27,
+    "chunk_id": 29,
     "pdf_page_number": 14,
     "book_page_number": 26
   },
@@ -227,7 +243,7 @@
     "text": "The American Diabetes Association encourages effective school management programs.  Effective diet management at school promotes a better learning environment, reduces student absences and classroom disruptions, and helps assure an effective response to diabetes-related emergencies.  Treatment includes dietary management with a diet limiting simple sugars and fats and providing adequate amounts of complex carbohydrates and proteins for growth and development.  The diet should be designed to provide adequate calories for the child's age, sex, activity level, and growth rate.  A physician's order is required to implement dietary modifications. The order from the physician should include a copy of the child's diet.  It is also helpful if the family or physician provides guidance to the school on the child's target blood glucose range, insulin schedule, testing times, and instructions for managing various situations (i.e., low blood sugar) (American Dietetic Association, 2006).",
     "source": "data/documents/disabilities.pdf",
     "section": "Diabetes",
-    "chunk_id": 28,
+    "chunk_id": 30,
     "pdf_page_number": 14,
     "book_page_number": 26
   },
@@ -235,7 +251,7 @@
     "text": "Inborn Errors of Metabolism (IEM)\n\nInborn errors of metabolism (IEM) are disorders in which individuals have missing or defective enzymes necessary to metabolize the food they eat.  Food that is not broken down properly may produce chemicals that can build up in various parts of the body and cause medical problems that can be mild or very serious (Seashore & Wappner, 1999).  The treatment for many IEMs usually includes some type of diet changes and may require special formula or supplements and/or medically modified foods.  These diet changes can be very different (even for individuals with the same disease) and relate both to the individual IEM and how mildly or seriously affected an individual is.",
     "source": "data/documents/disabilities.pdf",
     "section": "Inborn Errors of Metabolism (IEM)",
-    "chunk_id": 29,
+    "chunk_id": 31,
     "pdf_page_number": 15,
     "book_page_number": 27
   },
@@ -243,7 +259,7 @@
     "text": "Inborn errors of metabolism such as phenylketonuria, galactosemia, arginosuccinicaciduria, glutaric aciduria, and others are types of metabolic diseases in which the child or adolescent is unable to normally utilize the nutrients in regular meals.  For example, a child with phenylketonuria is unable to break down the protein sources he eats to amino acids and then to smaller parts of the amino acids.  This is because the child is unable to secrete sufficient enzymes from the liver that breaks down protein.  For that reason, if the individual eats more protein foods than the body can process, high levels of phenylalanine occur in the blood, go into the brain, and cause mental retardation.  If the diet is managed properly and the blood content of phenylalanine is controlled at an appropriate level, the child can grow, function, and learn normally (March of Dimes, 2006).  In galactosemia, children are unable to use the carbohydrate found in milk products and some other foods, due to an absent or defective enzyme. Reading labels is critical to successful diet implementation for these individuals.",
     "source": "data/documents/disabilities.pdf",
     "section": "Inborn Errors of Metabolism (IEM)",
-    "chunk_id": 30,
+    "chunk_id": 32,
     "pdf_page_number": 15,
     "book_page_number": 27
   },
@@ -251,7 +267,7 @@
     "text": "IEMs have traditionally been considered rare diseases that would seldom be encountered in local schools.  There are now new technologies available to states that have led to expanded screening and diagnosis of many of these diseases in newborns.  Early detection and diet intervention help individuals function normally as long as their diet is consistently maintained.  Because of increased screening and successful treatment, we are now seeing more of these children in our schools.",
     "source": "data/documents/disabilities.pdf",
     "section": "Inborn Errors of Metabolism (IEM)",
-    "chunk_id": 31,
+    "chunk_id": 33,
     "pdf_page_number": 16,
     "book_page_number": 28
   },
@@ -259,7 +275,7 @@
     "text": "It is helpful for school personnel to be aware of which IEMs are included in newborn screening in their individual state.  This allows resources to be more readily available for these conditions.  However, it is important to remember that IEMs may be diagnosed without required screening, and children with diagnosed conditions may relocate and require services from states that may not screen for their diagnosis.  Thus, it is very helpful for school food service directors to know how to track appropriate IEM resources and be able to seek specialized consultation quickly.  The National Newborn Screening and Genetics Resource Center (NNSGRC) maintains an updated report that provides tables identifying which diagnoses are screened for in the United States (US).  This report may be accessed at the following Web site:  http://genes-r-us.uthscsa.edu/nbsdisorders.pdf (The National Newborn Screening and Genetics Resource, 2006).  This link will provide a chart of which diseases are screened by each state.  Understanding the uniqueness of managing the diets of children with IEMs will help food service personnel provide more optimal assistance.",
     "source": "data/documents/disabilities.pdf",
     "section": "Inborn Errors of Metabolism (IEM)",
-    "chunk_id": 32,
+    "chunk_id": 34,
     "pdf_page_number": 16,
     "book_page_number": 28
   },
@@ -267,7 +283,7 @@
     "text": "One Diet Does Not Fit All\n\nBecause there is significant variation in disease presentation, different individuals with the same IEM may be mildly affected while others are severely affected.  Different levels of restriction may be required even for individuals with the same diagnosis.  Although there are general management protocols developed for managing the diets for individuals with IEMs, most diets must be individualized.  Guidelines given to the schools (including portions to be served) must be followed without exception.  Measurement of even foods allowed is critical since consuming too much of what is considered an 'allowed' food can produce medical problems.  Special training and monitoring of food service personnel is important to assure continued adherence to established protocols.  Strict adherence to the diet prescription enables the physician to make appropriate recommendations for diet adjustments when needed.",
     "source": "data/documents/disabilities.pdf",
     "section": "One Diet Does Not Fit All",
-    "chunk_id": 33,
+    "chunk_id": 35,
     "pdf_page_number": 17,
     "book_page_number": 29
   },
@@ -275,28 +291,12 @@
     "text": "Diets May Need Adjustments\n\nDiets for individuals with IEMs may require adjustments because of growth, illness, or changes in blood levels of monitored nutrients.  This makes strict reliance on the initial 'medical authorization' almost impossible and requires a system that allows for routine diet adjustments.",
     "source": "data/documents/disabilities.pdf",
     "section": "Diets May Need Adjustments",
-    "chunk_id": 34,
-    "pdf_page_number": 17,
-    "book_page_number": 29
-  },
-  {
-    "text": "Need for Consultants",
-    "source": "data/documents/disabilities.pdf",
-    "section": "Need for Consultants",
-    "chunk_id": 35,
-    "pdf_page_number": 17,
-    "book_page_number": 29
-  },
-  {
-    "text": "Some individuals with IEMs require use of special products or services. These products may require special vendors as well as unique preparation techniques. Although some may be essential (i.e., metabolic formulas), others may be optional or require selective use (i.e., low protein products). Because of the complexity of IEM diets, school food service personnel may find it helpful to seek consultation services from nutrition or genetic specialists, especially when diets are first implemented. These communications can help determine which products are being funded through other sources, which products will add variety and which products may be helpful, but too costly for a local school to invest in. Parents of children with IEMs are trained to manage their child's diet and should provide the school with the appropriate 'medical authorization' and guidance. It is critical for the families and the food service personnel to have an understanding regarding the communication of the child's diet information. How severely a child is affected, their age and developmental stage, as well as the socioeconomic needs of each family may dictate whether the family requests only minor accommodations or complete meal modifications. For this reason, it may be more difficult for families to give the school a simple 'allowed or not allowed' list as with other types of diets. Because adherence to and monitoring of daily intake is critical for these individuals, families are sometimes apprehensive and may be overly protective.",
-    "source": "data/documents/disabilities.pdf",
-    "section": "Need for Consultants",
     "chunk_id": 36,
     "pdf_page_number": 17,
     "book_page_number": 29
   },
   {
-    "text": "Because adherence to and monitoring of daily intake is critical for these individuals, families are sometimes apprehensive and may be overly protective. For unique situations, it is advisable for the school to have access to a consultant or specialist. Such a consultant can function as an advocate and resource for the school and assist with determining what would be reasonable and unreasonable requests.",
+    "text": "Need for Consultants",
     "source": "data/documents/disabilities.pdf",
     "section": "Need for Consultants",
     "chunk_id": 37,
@@ -308,19 +308,19 @@
     "source": "data/documents/disabilities.pdf",
     "section": "Need for Consultants",
     "chunk_id": 38,
-    "pdf_page_number": 18,
-    "book_page_number": 30
+    "pdf_page_number": 17,
+    "book_page_number": 29
   },
   {
     "text": "Because adherence to and monitoring of daily intake is critical for these individuals, families are sometimes apprehensive and may be overly protective. For unique situations, it is advisable for the school to have access to a consultant or specialist. Such a consultant can function as an advocate and resource for the school and assist with determining what would be reasonable and unreasonable requests.",
     "source": "data/documents/disabilities.pdf",
     "section": "Need for Consultants",
     "chunk_id": 39,
-    "pdf_page_number": 18,
-    "book_page_number": 30
+    "pdf_page_number": 17,
+    "book_page_number": 29
   },
   {
-    "text": "An optimal communication approach requires the school to communicate with the family about the normal menu offerings and allow the family to provide a modified menu that indicates which items the child can have and specific portions of each food specified. Schools are always advised to maintain documentation of all requests or guidance received from parents in the event that questions or mishaps occur.",
+    "text": "Some individuals with IEMs require use of special products or services. These products may require special vendors as well as unique preparation techniques. Although some may be essential (i.e., metabolic formulas), others may be optional or require selective use (i.e., low protein products). Because of the complexity of IEM diets, school food service personnel may find it helpful to seek consultation services from nutrition or genetic specialists, especially when diets are first implemented. These communications can help determine which products are being funded through other sources, which products will add variety and which products may be helpful, but too costly for a local school to invest in. Parents of children with IEMs are trained to manage their child's diet and should provide the school with the appropriate 'medical authorization' and guidance. It is critical for the families and the food service personnel to have an understanding regarding the communication of the child's diet information. How severely a child is affected, their age and developmental stage, as well as the socioeconomic needs of each family may dictate whether the family requests only minor accommodations or complete meal modifications. For this reason, it may be more difficult for families to give the school a simple 'allowed or not allowed' list as with other types of diets. Because adherence to and monitoring of daily intake is critical for these individuals, families are sometimes apprehensive and may be overly protective.",
     "source": "data/documents/disabilities.pdf",
     "section": "Need for Consultants",
     "chunk_id": 40,
@@ -328,10 +328,26 @@
     "book_page_number": 30
   },
   {
+    "text": "Because adherence to and monitoring of daily intake is critical for these individuals, families are sometimes apprehensive and may be overly protective. For unique situations, it is advisable for the school to have access to a consultant or specialist. Such a consultant can function as an advocate and resource for the school and assist with determining what would be reasonable and unreasonable requests.",
+    "source": "data/documents/disabilities.pdf",
+    "section": "Need for Consultants",
+    "chunk_id": 41,
+    "pdf_page_number": 18,
+    "book_page_number": 30
+  },
+  {
+    "text": "An optimal communication approach requires the school to communicate with the family about the normal menu offerings and allow the family to provide a modified menu that indicates which items the child can have and specific portions of each food specified. Schools are always advised to maintain documentation of all requests or guidance received from parents in the event that questions or mishaps occur.",
+    "source": "data/documents/disabilities.pdf",
+    "section": "Need for Consultants",
+    "chunk_id": 42,
+    "pdf_page_number": 18,
+    "book_page_number": 30
+  },
+  {
     "text": "How To Handle Mistakes\n\nIf a mistake occurs, it is always in the best interest of the child and the school, for information regarding the mistake to be communicated immediately to the parents.  This is important for several reasons.  First of all, it will allow the child to receive emergency care if needed (although this is seldom required).  Secondly, knowledge of inappropriate consumption will allow the parents to adjust the remaining intake for the day and actually prevent an adverse rise or fall of blood levels.  Thirdly, knowledge of inappropriate consumption will provide an explanation of an unusual blood level and allow specialists to make more appropriate diet adjustments.",
     "source": "data/documents/disabilities.pdf",
     "section": "How To Handle Mistakes",
-    "chunk_id": 41,
+    "chunk_id": 43,
     "pdf_page_number": 19,
     "book_page_number": 31
   }

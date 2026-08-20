@@ -32,6 +32,8 @@ SECTION_NAMES = [
     "Mental Retardation",
     "Down Syndrome",
     "Prader Willi (PW) Syndrome",
+    "Down Syndrome (Mental Retardation)",
+    "Prader Willi (PW) Syndrome (Mental Retardation)",
     "Spina Bifida",
     "Cystic Fibrosis",
     "Rett Syndrome",
@@ -64,7 +66,6 @@ def normalize_section_name(
 ) -> str | None:
 
     normalized = normalize_text(text)
-
     for section in SECTION_NAMES:
         if normalized.casefold() == section.casefold():
             return section
@@ -178,6 +179,20 @@ def assign_sections(
     assigned = []
 
     for element in elements:
+        text = normalize_text(element.text)
+        lower_text = text.casefold()
+        if lower_text.startswith(
+            "down syndrome is"
+        ):
+            current_section = (
+                "Down Syndrome (Mental Retardation)"
+            )
+        elif lower_text.startswith(
+            "prader willi (pw) syndrome involves"
+        ):
+            current_section = (
+                "Prader Willi (PW) Syndrome (Mental Retardation)"
+            )
 
         section_name = get_section_name(
             element

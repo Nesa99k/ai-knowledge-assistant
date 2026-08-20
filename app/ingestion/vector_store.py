@@ -8,6 +8,7 @@ def load_embeddings(
     file_path: str,
 ) -> tuple[list[dict], np.ndarray]:
     """Load chunks and their embeddings from JSON."""
+
     path = Path(file_path)
 
     with path.open(
@@ -28,6 +29,7 @@ def build_index(
     embeddings: np.ndarray,
 ) -> faiss.Index:
     """Build a FAISS index for cosine similarity."""
+
     dimension = embeddings.shape[1]
 
     index = faiss.IndexFlatIP(dimension)
@@ -41,6 +43,7 @@ def save_index(
     file_path: str,
 ) -> None:
     """Save a FAISS index to disk."""
+
     path = Path(file_path)
 
     path.parent.mkdir(
@@ -58,6 +61,7 @@ def load_index(
     file_path: str,
 ) -> faiss.Index:
     """Load a FAISS index from disk."""
+
     return faiss.read_index(
         str(file_path)
     )
@@ -69,16 +73,27 @@ def search_index(
     chunks: list[dict],
     top_k: int = 5,
     similarity_threshold: float = 0.75,
+    section: str | None = None,
 ) -> list[dict]:
-    """Search the FAISS index using top-k and similarity threshold."""
+    """Search FAISS with optional metadata filtering."""
+
     query = np.array(
         [query_embedding],
         dtype="float32",
     )
 
+    # Retrieve more candidates when metadata filtering is used.
+    search_k = top_k
+
+    if section is not None:
+        search_k = min(
+            len(chunks),
+            max(top_k * 5, 20),
+        )
+
     scores, indices = index.search(
         query,
-        top_k,
+        search_k,
     )
 
     results = []
@@ -87,14 +102,26 @@ def search_index(
         scores[0],
         indices[0],
     ):
+        if index_id < 0:
+            continue
+
         if score < similarity_threshold:
             continue
+
+        chunk = chunks[index_id]
+
+        if section is not None:
+            if chunk["section"] != section:
+                continue
 
         results.append(
             {
                 "similarity": float(score),
-                "chunk": chunks[index_id],
+                "chunk": chunk,
             }
         )
+
+        if len(results) >= top_k:
+            break
 
     return results
