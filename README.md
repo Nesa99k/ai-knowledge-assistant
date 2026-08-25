@@ -389,7 +389,7 @@ The current system can:
 
 ### Search Results
 
-![Search Results](images/screenshot-2.png)
+![AI Knowledge Assistant - Search Results](images/Screenshot-2.png)
 
 ## 12. Testing
 
