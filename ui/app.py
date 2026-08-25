@@ -204,7 +204,7 @@ st.markdown(
 # --------------------------------------------------
 
 st.markdown(
-    '<div class="app-title">🤖 AI Knowledge Assistant</div>',
+    '<div class="app-title"> AI Knowledge Assistant</div>',
     unsafe_allow_html=True,
 )
 

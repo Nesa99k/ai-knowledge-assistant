@@ -4,7 +4,7 @@ A document-based Retrieval-Augmented Generation (RAG) system built as a hands-on
 
 The project processes a PDF document, extracts and chunks its content, generates embeddings, performs semantic vector search, builds an LLM-ready context, and generates grounded answers using an LLM.
 
-The system is being developed incrementally, with each stage focusing on a specific part of a modern RAG pipeline.
+The system is developed incrementally, with each stage focusing on a specific part of a modern RAG pipeline.
 
 ---
 
@@ -37,18 +37,60 @@ The project currently includes the following stages:
 - Grounded prompt construction
 - LLM-based answer generation
 - End-to-end RAG pipeline
+- FastAPI backend
+- Streamlit-based user interface
+- Environment-based API configuration
+- Automated testing with pytest
 
-The current RAG pipeline has been tested with:
+The RAG pipeline has been tested with:
 
 - Regular document text
 - Table-based information
 - Questions whose answers are not available in the provided context
+- Different retrieval and similarity thresholds
+
+The project also includes a local PDF knowledge source, a reproducible project setup, and documentation for running the system locally.
 
 ---
 
 ## 3. Architecture
 
-The current system follows this general flow:
+The system is organized into several layers: a Streamlit user interface, a FastAPI backend, and the underlying RAG pipeline.
+
+The overall application flow is:
+
+```text
+User
+ │
+ ▼
+┌──────────────────┐
+│ Streamlit UI     │
+└────────┬─────────┘
+         │ HTTP request
+         ▼
+┌──────────────────┐
+│ FastAPI Backend  │
+└────────┬─────────┘
+         │
+         ▼
+┌──────────────────┐
+│ RAG Pipeline     │
+└────────┬─────────┘
+         │
+         ▼
+   Retrieval Layer
+         │
+         ▼
+   Context Builder
+         │
+         ▼
+        LLM
+         │
+         ▼
+      Answer
+```
+
+The internal RAG pipeline follows this flow:
 
 ```text
                     PDF Document
@@ -98,6 +140,8 @@ User Question ───► Retriever
                          ▼
                       Answer
 ```
+
+The separation between the UI, API layer, retrieval components, and LLM components keeps the system modular and makes individual stages easier to test and develop independently.
 
 ---
 
@@ -176,6 +220,8 @@ Vector comparison
 Similarity score
 ```
 
+Embeddings are generated during the indexing process and are later used to represent incoming user questions during retrieval.
+
 ---
 
 ## 6. Vector Search
@@ -215,7 +261,7 @@ This separates retrieval from answer generation.
 
 The LLM does not search the document directly. It receives the context selected by the retrieval layer.
 
----
+## The retrieval layer also supports configurable similarity thresholds and section-aware retrieval, allowing the system to filter out weak or irrelevant matches before constructing the final context.
 
 ## 7. Context Construction
 
@@ -271,7 +317,7 @@ The current grounding rules include:
 - When answering a table question, identify the requested row and column.
 - If the requested information is not present, state that it is not available.
 
-The goal is to keep the generated answer grounded in the retrieved document content.
+The goal is to keep generated answers grounded in the retrieved document content and reduce unsupported responses.
 
 ---
 
@@ -307,7 +353,9 @@ Conceptually:
 answer = rag.answer(question)
 ```
 
-This means the caller does not need to manually execute the individual retrieval, context, and generation steps.
+This means the caller does not need to manually execute the individual retrieval, context construction, and generation steps.
+
+The pipeline also exposes a streaming-oriented generation path used by the API layer, while the main application interface remains compatible with standard answer generation.
 
 ---
 
@@ -321,15 +369,29 @@ The current system can:
 - Generate embeddings
 - Build a FAISS vector index
 - Search chunks using semantic similarity
-- Apply a similarity threshold
+- Apply similarity thresholds
+- Perform section-aware retrieval
 - Build an LLM-ready context
 - Handle table-based context
 - Generate grounded answers
 - Refuse to provide information when the retrieved context does not contain the requested information
+- Expose the RAG pipeline through a FastAPI backend
+- Provide a Streamlit-based user interface
+- Run automated tests with pytest
 
 ---
 
-## 11. Testing
+## 11. Screenshots
+
+### Streamlit Interface
+
+![AI Knowledge Assistant - Main Interface](images/screenshot-1.png)
+
+### Search Results
+
+![Search Results](images/screenshot-2.png)
+
+## 12. Testing
 
 The project includes automated tests for the main components and additional scripts for manual inspection and RAG evaluation.
 
@@ -348,7 +410,7 @@ tests/
 └── test_query_rewriter.py
 ```
 
-Pytest is configured to collect tests only from the `tests/` directory. This keeps the automated tests separate from the manual testing scripts in the project root.
+Pytest is configured through `pytest.ini` to collect automated tests from the `tests/` directory. This keeps the automated tests separate from the manual development and inspection scripts in the project root.
 
 Run all automated tests with:
 
@@ -356,9 +418,15 @@ Run all automated tests with:
 PYTHONPATH=. pytest
 ```
 
+The current test suite has been successfully executed with:
+
+```text
+21 passed
+```
+
 ### Manual Testing and Inspection
 
-The repository also contains scripts for manually inspecting individual pipeline stages and testing RAG behavior:
+The repository also contains scripts for manually inspecting individual pipeline stages and evaluating RAG behavior:
 
 ```text
 inspect_chunks.py
@@ -384,7 +452,7 @@ Manual RAG testing has included questions about:
 
 ---
 
-## 12. Project Structure
+## 13. Project Structure
 
 ```text
 .
@@ -451,9 +519,11 @@ Manual RAG testing has included questions about:
 └── README.md
 ```
 
+The project is organized into separate layers for API access, document ingestion, retrieval, LLM interaction, testing, and the user interface.
+
 ---
 
-## 13. Environment
+## 14. Environment
 
 The project uses environment variables for external service configuration.
 
@@ -475,9 +545,9 @@ The repository includes `.env.example` as a template so that each user can provi
 
 ---
 
-## 14. Running the Project
+## 15. Running the Project
 
-### 14.1 Create the Environment
+### 15.1 Create the Environment
 
 Create and activate a virtual environment:
 
@@ -492,7 +562,7 @@ Install the dependencies:
 pip install -r requirements.txt
 ```
 
-### 14.2 Configure Environment Variables
+### 15.2 Configure Environment Variables
 
 Create the local environment file:
 
@@ -502,7 +572,7 @@ cp .env.example .env
 
 Then add your own `HF_TOKEN` to `.env`.
 
-### 14.3 Prepare Embeddings
+### 15.3 Prepare Embeddings
 
 The repository includes the processed chunks, while embeddings are generated locally:
 
@@ -516,7 +586,7 @@ This creates:
 data/processed/disabilities_embeddings.json
 ```
 
-### 14.4 Build the FAISS Index
+### 15.4 Build the FAISS Index
 
 After generating embeddings:
 
@@ -530,9 +600,9 @@ This creates:
 data/processed/disabilities.index
 ```
 
-The embeddings and FAISS index are generated artifacts and are not required to be committed to the repository.
+The embeddings and FAISS index are generated artifacts and do not need to be committed to the repository.
 
-### 14.5 Run Automated Tests
+### 15.5 Run Automated Tests
 
 Run the complete automated test suite:
 
@@ -540,7 +610,7 @@ Run the complete automated test suite:
 PYTHONPATH=. pytest
 ```
 
-### 14.6 Run the API
+### 15.6 Run the API
 
 The FastAPI application is located under:
 
@@ -548,13 +618,13 @@ The FastAPI application is located under:
 app/api/main.py
 ```
 
-The API can be started with:
+Start the API with:
 
 ```bash
 PYTHONPATH=. uvicorn app.api.main:app --reload
 ```
 
-### 14.7 Run the Streamlit UI
+### 15.7 Run the Streamlit UI
 
 Start the user interface with:
 
@@ -572,62 +642,79 @@ so the example project can be run without obtaining a separate source document.
 
 ---
 
-## 15. Development Roadmap
+## 16. Development Roadmap
 
-The project is being developed incrementally.
+The project was developed incrementally, with each stage focusing on a specific part of the RAG system.
 
 ### Completed
 
-#### Day 1–4
+#### Document Ingestion
 
-- Document ingestion
 - PDF extraction
 - Page handling
-- Cleaning
-- Chunking
-- Section metadata
+- Text cleaning
+- Printed page mapping
+- Semantic chunking
+- Section tracking
 - Ingestion testing
 
-#### Day 5
+#### Embeddings and Retrieval
 
-- Embeddings
+- Text embeddings
 - Semantic similarity
 - Cosine similarity
 - Vector representation
 - FAISS indexing
 - Vector search
-- Retrieval parameters
+- Top-k retrieval
+- Similarity thresholding
+- Section-aware retrieval
 
-#### Day 6
+#### RAG Pipeline
 
 - RAG architecture
+- Context construction
 - Context injection
-- Retrieval parameters
-- Top-k retrieval
-- Relevance filtering
 - Grounded prompting
 - LLM answer generation
 - Table-aware context
 - Basic hallucination prevention
+- Query rewriting
+
+#### Application Layer
+
+- FastAPI backend
+- API request and response schemas
+- Streamlit user interface
+- Integration between the UI and RAG API
+- Environment-based API configuration
+
+#### Testing
+
+- Automated component tests
+- End-to-end pipeline tests
+- Query rewriting tests
+- Manual retrieval inspection
+- Manual RAG evaluation
+- Table-based question testing
 
 ### Planned
 
-Future stages may include:
+Possible future improvements include:
 
-- Streaming LLM responses
-- User-facing application interface
+- Reliable end-to-end streaming in the user interface
 - Improved retrieval strategies
 - More robust table handling
 - Retrieval evaluation
 - Answer evaluation
 - Conversation history
-- Production-oriented RAG architecture
 - Performance optimization
+- Production-oriented RAG architecture
 - Deployment
 
 ---
 
-## 16. Design Principle
+## 17. Design Principle
 
 The project follows a modular approach.
 
@@ -649,8 +736,25 @@ Context Builder
 Prompt
    ↓
 LLM
+   ↓
+API
+   ↓
+UI
 ```
 
-This makes it possible to test, replace, and improve individual components without rewriting the entire system.
+This structure makes it possible to test, replace, and improve individual components without rewriting the entire system.
 
-The goal is not only to build a working assistant, but to understand how each component contributes to the final RAG system.
+The goal is not only to build a working knowledge assistant, but also to understand how each component contributes to a complete RAG system.
+
+The project therefore emphasizes:
+
+- Modular design
+- Separation of responsibilities
+- Testability
+- Grounded generation
+- Explicit retrieval and context construction
+- Understanding the underlying RAG components rather than relying entirely on a black-box framework
+
+```
+
+```
